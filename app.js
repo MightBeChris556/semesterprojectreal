@@ -50,7 +50,7 @@ app.get('/login', function(req, res, next) {
 /* get login page */
 app.get('/role/:roleid', function(req, res, next) {
 
-  res.render('login', { title: 'Express',layout:false });
+  res.render('roleDetails', { title: 'Express',layout:false });
 
 });
 
