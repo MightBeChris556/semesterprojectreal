@@ -10,6 +10,8 @@ const fs = require('fs');
 const axios = require('axios');
 const {json} = require("express");
 
+const pgp = require('pg-promise')(/* options */)
+const db = pgp('postgres://postgres:3JJlYB05g1M6OACB@host:5432/postgres')
 
 
 var app = express();
@@ -37,6 +39,23 @@ app.get('/', function(req, res, next) {
 
   }
 
+});
+// Define an endpoint for submitting form data
+app.post('/submit-job', async (req, res) => {
+    try {
+        const { jobName, jobDescription, field3 } = req.body;
+
+        // Perform any necessary validation or processing of form data
+
+        // Insert data into PostgreSQL database
+        const result = await db.none('INSERT INTO job (field1, field2, field3) VALUES($1, $2, $3)', [field1, field2, field3]);
+
+        // You can send a success response to the client
+        res.json({ success: true, message: 'Form data submitted successfully' });
+    } catch (error) {
+        console.error('Error submitting form data:', error);
+        res.status(500).json({ success: false, message: 'Internal Server Error' });
+    }
 });
 
 /* get login page */
