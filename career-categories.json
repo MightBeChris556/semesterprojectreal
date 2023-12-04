@@ -30,7 +30,8 @@
       "title": "Front-End Development",
       "description": "Works on the client-side of web applications, creating user interfaces and experiences using HTML, CSS, and JavaScript."
     },
-    "Back-End Development": {
+    "backEndDevelopment": {
+      "title": "Back-End Development",
       "description": "Focuses on the server-side of web development, handling database interactions, server logic, and application functionality."
     },
     "fullStackDevelopment": {
