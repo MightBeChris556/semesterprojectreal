@@ -77,9 +77,9 @@
 <hr/>
 <div class="container">
     <h1 class="text-center">Post job</h1>
-    <form>
+    <form action="/submit-job" method="post">
         <div class="form-group row">
-            <label for="text" class="col-4 col-form-label">Text Field</label>
+            <label for="text" class="col-4 col-form-label">Job Name</label>
             <div class="col-8">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -87,20 +87,20 @@
                             <i class="fa fa-address-card"></i>
                         </div>
                     </div>
-                    <input id="text" name="text" type="text" class="form-control">
+                    <input id="text" name="jobName" type="text" class="form-control">
                 </div>
             </div>
         </div>
         <div class="form-group row">
-            <label for="textarea" class="col-4 col-form-label">Text Area</label>
+            <label for="textarea" class="col-4 col-form-label">Job Description</label>
             <div class="col-8">
-                <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
+                <textarea id="textarea" name="jobDescription" cols="40" rows="5" class="form-control"></textarea>
             </div>
         </div>
         <div class="form-group row">
-            <label for="select" class="col-4 col-form-label">Select</label>
+            <label for="select" class="col-4 col-form-label">Select Role</label>
             <div class="col-8">
-                <select id="select" name="select" class="custom-select" required="required">
+                <select id="select" name="jobRole" class="custom-select" required="required">
                     {{#each subCategories}}
                         <option value={{@key}}>{{this.title}}</option>
 

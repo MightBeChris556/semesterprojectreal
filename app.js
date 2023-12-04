@@ -41,6 +41,7 @@ app.get('/', function(req, res, next) {
 });
 // Define an endpoint for submitting form data
 app.post('/submit-job', async (req, res) => {
+    console.log(req.body)
     try {
         const { jobName, jobDescription, role } = req.body;
 
