@@ -1,0 +1,166 @@
+{
+  "security": {
+    "linkStub": "security",
+    "title": "Security",
+    "subcategories": {
+      "penetrationTesting": {
+        "title": "Penetration Testing",
+        "description":"Penetration testers, also known as ethical hackers, are cybersecurity professionals who assess computer systems, networks, or applications to identify vulnerabilities that malicious hackers could exploit. They conduct simulated attacks to evaluate the effectiveness of an organization's security measures and provide recommendations for improvement."
+      },
+      "researcher": {
+        "title": "Researcher",
+        "description": "Security researchers focus on staying ahead of potential threats by continuously analyzing emerging technologies, software, and vulnerabilities. They conduct in-depth investigations to understand the latest trends in cyber threats, develop new methodologies for protection, and contribute to the overall advancement of cybersecurity knowledge."
+      },
+      "Security Consultant": {
+        "description": " Security consultants are experts who provide strategic advice to organizations on how to enhance their overall security posture. They assess existing security protocols, conduct risk assessments, and recommend tailored solutions to protect against potential cyber threats. Security consultants often collaborate closely with clients to develop and implement effective security strategies."
+      },
+      "Security Engineer": {
+        "description": "Security engineers are responsible for designing, implementing, and managing an organization's security infrastructure. They work on the development and maintenance of security systems, including firewalls, intrusion detection systems, and encryption protocols. Security engineers also respond to security incidents, troubleshoot vulnerabilities, and ensure the ongoing integrity of an organization's information systems."
+      }
+    }
+
+},
+
+  "web": {
+    "linkStub": "web",
+    "title": "Web",
+    "Front-End Development": {
+      "title": "Front-End Development",
+      "description": "Works on the client-side of web applications, creating user interfaces and experiences using HTML, CSS, and JavaScript."
+    },
+    "Back-End Development": {
+      "description": "Focuses on the server-side of web development, handling database interactions, server logic, and application functionality."
+    },
+    "fullStackDevelopment": {
+      "title": "Full-Stack Development",
+      "description": "Possesses skills in both front-end and back-end development, capable of working on the entire web application stack."
+    },
+
+    "devOps": {
+      "title": "Devops",
+      "description": "Manages the deployment, automation, and maintenance of web applications, ensuring efficient and reliable development workflows."
+    }
+
+
+  },
+
+  "hardware": {
+    "linkStub": "hardware",
+    "title": "Hardware",
+    "subcategories": {
+      "hardwareEngineer": {
+        "title": "Hardware Engineer",
+        "description": "Designs, develops, and tests computer hardware components, such as processors, memory, and circuit boards."
+      },
+      "embeddedSystemsDeveloper": {
+        "title": "Embedded Systems Developer",
+        "description": "Creates software for embedded systems, which are specialized computing systems integrated into larger devices or products."
+      },
+      "fieldServiceTechnician": {
+        "title": "Field Service Technician",
+        "description": "Installs, repairs, and maintains hardware systems at client locations, offering on-site technical support."
+      },
+      "computerTechnician": {
+        "title": "Computer Technician",
+        "description": "Repairs and troubleshoots computer hardware issues, including desktops, laptops, and peripherals."
+      },
+      "hardwareSupportSpecialist": {
+        "title": "Hardware Support Specialist",
+        "description": "Provides specialized technical support for hardware-related issues, including diagnostics and repairs."
+      },
+      "qualityAssuranceEngineer": {
+        "title": "Quality Assurance Engineer",
+        "description": "Tests and ensures the quality and reliability of hardware components through various testing methodologies."
+      },
+      "roboticsEngineer": {
+        "title": "Robotics Engineer",
+        "description": "Designs and develops hardware systems for robots, including sensors, actuators, and control systems, often involving mechatronics."
+      }
+    }
+
+  },
+
+  "design": {
+    "linkStub": "design",
+    "title": "Design",
+    "subcategories": {
+      "UI/UX Designer": {
+        "description": "Designs the user interface (UI) and user experience (UX) of software applications, ensuring a visually appealing and user-friendly design."
+      },
+      "graphicDesigner": {
+        "title": "Graphic Designer",
+        "description": "Creates visual concepts, using computer software or by hand, to communicate ideas that inspire, inform, and captivate consumers."
+      },
+      "webDesigner": {
+        "title": "Web Designer",
+        "description": "Focuses on the visual design and layout of websites, creating an aesthetically pleasing and engaging online presence."
+      }
+    }
+
+
+  },
+  "networking": {
+    "linkStub": "networking",
+    "title": "Networking",
+    "subcategories": {
+      "networkEngineer": {
+        "title": "Network Engineer",
+        "description": "Designs, implements, and manages computer networks, ensuring connectivity, security, and optimal performance.",
+        "educationRequirements": "Bachelor's degree in Computer Science, Information Technology, or a related field. Industry certifications such as CCNA or CCNP may be preferred."
+      },
+      "networkAdministrator": {
+        "title": "Network Administrator",
+        "description": "Manages and maintains an organization's network infrastructure, ensuring connectivity, security, and efficiency.",
+        "educationRequirements": "Bachelor's degree in Computer Science, Information Technology, or a related field. Relevant certifications, such as CompTIA Network+, may be advantageous."
+      },
+      "wirelessCommunicationEngineer": {
+
+        "description": "Designs and manages wireless communication systems, including Wi-Fi networks and cellular networks.",
+        "educationRequirements": "Bachelor's degree in Electrical Engineering, Telecommunications, or a related field. Specialized certifications in wireless communication may be beneficial."
+      },
+      "dataCenterNetworkEngineer": {
+        "title": "Data Center Network Engineer",
+        "description": "Designs and manages the networking infrastructure within data centers, ensuring reliable and efficient data transmission.",
+        "educationRequirements": "Bachelor's degree in Computer Science, Information Technology, or a related field. Industry certifications related to data center networking, such as Cisco CCIE Data Center, may be preferred."
+      }
+    }
+
+  },
+
+  "data": {
+    "linkStub": "data",
+    "title": "Data",
+    "subcategories": {
+      "dataScientist": {
+        "title": "Data Scientist",
+        "description": "Applies statistical and machine learning techniques to analyze and interpret complex data sets, extracting valuable insights and patterns."
+      },
+      "dataEngineer": {
+        "title": "Data Engineer",
+        "description": "Designs, develops, and manages data architecture, databases, and processing systems to ensure efficient data storage and retrieval."
+      },
+      "databaseAdministrator": {
+        "title": "Database Administrator",
+        "description": "Manages and maintains databases, ensuring data integrity, security, and optimal performance for applications and systems."
+      },
+
+      "dataAnalyst": {
+        "title": "Data Analyst",
+        "description": "Examines data to identify trends, create visualizations, and present findings that aid in business decision-making."
+      },
+      "machinelearningEngineer": {
+        "title": "Machine Learning Engineer",
+        "description": "Develops and implements machine learning models and algorithms to enable systems to learn from and make predictions based on data."
+      },
+
+      "dataVisualizationSpecialist": {
+        "title": "Data Visualization Specialist",
+        "description": "Creates visually appealing and informative data visualizations, such as charts and graphs, to communicate complex information effectively."
+      }
+
+    }
+
+  }
+
+
+}

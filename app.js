@@ -3,10 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const axios = require('axios');
+const hbs = require('express-handlebars');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const fs = require('fs');
+
+const axios = require('axios');
+const {json} = require("express");
+
+
 
 var app = express();
 
@@ -20,8 +24,155 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+
+
+
+
+/* GET home page. */
+app.get('/', function(req, res, next) {
+  if (req.cookies["sessionId"] !== "undefined" && req.cookies["sessionId"]){
+    res.redirect("/roles/directory")
+  }else{
+    res.redirect('/login');
+
+  }
+
+});
+
+/* get login page */
+app.get('/login', function(req, res, next) {
+
+    res.render('login', { title: 'Express',layout:false });
+
+});
+/* get login page */
+app.get('/roles/directory', function(req, res, next) {
+
+    res.render('directory', { title: 'Express',layout:false });
+
+});
+
+/* get information about a specific role */
+app.get('/roles/:category/:roleName', function(req, res, next) {
+    let category = req.params["category"]
+    let roleName = req.params["roleName"]
+
+
+    // Specify the path to your JSON file
+    const filePath = __dirname + '/career-categories.json';
+
+    // Read the file asynchronously
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON file:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        try {
+            // Parse the JSON data
+            const jsonData = JSON.parse(data);
+            // Get the keys from the JSON object
+            let categoryInfo = jsonData[category]
+
+            const roleDetails = jsonData[category]["subcategories"][roleName]
+            res.render('roleInformation', {
+                title: 'Express',
+                layout: false,
+                "category": categoryInfo,
+                "roleDetails": roleDetails
+            });
+
+
+        } catch (parseError) {
+            console.error('Error parsing JSON:', parseError);
+            res.status(500).send('Internal Server Error');
+        }
+    })
+
+
+
+
+
+});
+/* get information about a specific category */
+app.get('/roles/:category', function(req, res, next) {
+    let category = req.params["category"]
+    let firstLetter = category.charAt(0).toUpperCase()
+
+    // Specify the path to your JSON file
+    const filePath = __dirname + '/career-categories.json';
+
+    // Read the file asynchronously
+    fs.readFile(filePath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading JSON file:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        try {
+            // Parse the JSON data
+            const jsonData = JSON.parse(data);
+            const categoryData = jsonData[category]
+            const subCategories = jsonData[category]["subcategories"]
+            // Get the keys from the JSON object
+
+            console.log(jsonData[category])
+            res.render('categoryDetail', {
+                title: 'Express',
+                layout: false,
+                "category": categoryData,
+                "subCategories": subCategories
+            });
+
+
+        } catch (parseError) {
+            console.error('Error parsing JSON:', parseError);
+            res.status(500).send('Internal Server Error');
+        }
+    })
+
+
+
+});
+
+app.post('/login', async function (req, res, next) {
+  let email = req.body["email"]
+  let password = req.body["password"]
+  console.log(email)
+  console.log("attempting login")
+  axios.post(process.env.dev_api_url + '/authenticateUser', {
+    email:email,
+    password:password,
+    userType:"client"
+
+  })
+      .then(async function (response) {
+        console.log(response.data)
+
+
+
+        let editable = true
+
+
+        let data = response.data
+        res.cookie("sessionId", response.data, {maxAge: ms('1d')});
+
+
+        res.redirect("/client/dashboard")
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode + errorMessage)
+      });
+    })
+
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -38,21 +189,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-
-/* get login page */
-app.get('/login', function(req, res, next) {
-
-    res.render('login', { title: 'Express',layout:false });
-
-});
-
-/* get login page */
-app.get('/role/:roleid', function(req, res, next) {
-
-  res.render('roleDetails', { title: 'Express',layout:false });
-
-});
-
 
 module.exports = app;

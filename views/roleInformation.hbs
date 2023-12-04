@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FInd-A-Role</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Find-A-Role</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+            <!-- Add other nav items here -->
+        </ul>
+    </div>
+</nav>
+
+<!-- Main Header -->
+<div class="jumbotron">
+    <h1 class="display-4">Find More. Do More. Be More.</h1>
+    <p class="lead">A brief description of tech careers</p>
+</div>
+
+<!-- Career Categories -->
+<div class="container">
+    <!-- this row contains the title and background image -->
+    <!-- TODO: this row contains the title and background image -->
+    <div class="row">
+        <h1>{{roleDetails.title}}</h1>
+
+    </div>
+
+    <!-- TODO: This row contains two columns. information about role and quals -->
+    <div class="row">
+        <div class="col">
+            <h3>{{roleDetails.description}}</h3>
+        </div>
+        <div class="d-flex" style="height: 200px;">
+            <div class="vr"></div>
+        </div>
+        <div class="col">
+            <h1>Education Requirements</h1>
+            <h2>{{roleDetails.educationRequirements}}</h2>
+        </div>
+
+    </div>
+</div>
+
+<!-- Additional Sections -->
+<div class="container">
+    <hr/>
+    <!-- Include other sections here using Bootstrap components -->
+    <h1 class="text-center">Jobs</h1>
+
+    <div class="list-group">
+        {{#each jobs}}
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">List group item heading</h5>
+                    <small class="text-muted">3 days ago</small>
+                </div>
+                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <small class="text-muted">Donec id elit non mi porta.</small>
+            </a>
+
+        {{/each}}
+
+
+    </div>
+</div>
+<hr/>
+<div class="container">
+    <h1 class="text-center">Post job</h1>
+    <form>
+        <div class="form-group row">
+            <label for="text" class="col-4 col-form-label">Text Field</label>
+            <div class="col-8">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fa fa-address-card"></i>
+                        </div>
+                    </div>
+                    <input id="text" name="text" type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="text1" class="col-4 col-form-label">Text Field</label>
+            <div class="col-8">
+                <input id="text1" name="text1" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="textarea" class="col-4 col-form-label">Text Area</label>
+            <div class="col-8">
+                <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-4 col-8">
+                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+        <span class="text-muted">Place footer content here.</span>
+    </div>
+</footer>
+
+<!-- Include Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
