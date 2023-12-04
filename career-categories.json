@@ -11,10 +11,12 @@
         "title": "Researcher",
         "description": "Security researchers focus on staying ahead of potential threats by continuously analyzing emerging technologies, software, and vulnerabilities. They conduct in-depth investigations to understand the latest trends in cyber threats, develop new methodologies for protection, and contribute to the overall advancement of cybersecurity knowledge."
       },
-      "Security Consultant": {
+      "securityConsultant": {
+        "title": "Security Consultant",
         "description": " Security consultants are experts who provide strategic advice to organizations on how to enhance their overall security posture. They assess existing security protocols, conduct risk assessments, and recommend tailored solutions to protect against potential cyber threats. Security consultants often collaborate closely with clients to develop and implement effective security strategies."
       },
-      "Security Engineer": {
+      "securityEngineer": {
+        "title": "Security Engineer",
         "description": "Security engineers are responsible for designing, implementing, and managing an organization's security infrastructure. They work on the development and maintenance of security systems, including firewalls, intrusion detection systems, and encryption protocols. Security engineers also respond to security incidents, troubleshoot vulnerabilities, and ensure the ongoing integrity of an organization's information systems."
       }
     }

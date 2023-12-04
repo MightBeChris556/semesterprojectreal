@@ -42,12 +42,12 @@ app.get('/', function(req, res, next) {
 // Define an endpoint for submitting form data
 app.post('/submit-job', async (req, res) => {
     try {
-        const { jobName, jobDescription, field3 } = req.body;
+        const { jobName, jobDescription, role } = req.body;
 
         // Perform any necessary validation or processing of form data
 
         // Insert data into PostgreSQL database
-        const result = await db.none('INSERT INTO job (field1, field2, field3) VALUES($1, $2, $3)', [field1, field2, field3]);
+        const result = await db.none('INSERT INTO job (jobName, jobDescription, jobRole) VALUES($1, $2, $3)', [field1, field2, field3]);
 
         // You can send a success response to the client
         res.json({ success: true, message: 'Form data submitted successfully' });
@@ -91,13 +91,17 @@ app.get('/roles/:category/:roleName', function(req, res, next) {
             const jsonData = JSON.parse(data);
             // Get the keys from the JSON object
             let categoryInfo = jsonData[category]
+            const subCategories = jsonData[category]["subcategories"]
+            console.log(subCategories)
+
 
             const roleDetails = jsonData[category]["subcategories"][roleName]
             res.render('roleInformation', {
                 title: 'Express',
                 layout: false,
                 "category": categoryInfo,
-                "roleDetails": roleDetails
+                "roleDetails": roleDetails,
+                "subCategories":subCategories
             });
 
 

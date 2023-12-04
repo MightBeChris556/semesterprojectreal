@@ -79,7 +79,7 @@
     <h1 class="text-center">Post job</h1>
     <form>
         <div class="form-group row">
-            <label for="text" class="col-4 col-form-label">Job Name</label>
+            <label for="text" class="col-4 col-form-label">Text Field</label>
             <div class="col-8">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -92,15 +92,21 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="text1" class="col-4 col-form-label">Job Link</label>
+            <label for="textarea" class="col-4 col-form-label">Text Area</label>
             <div class="col-8">
-                <input id="text1" name="text1" type="text" class="form-control">
+                <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
             </div>
         </div>
         <div class="form-group row">
-            <label for="textarea" class="col-4 col-form-label">Job Description</label>
+            <label for="select" class="col-4 col-form-label">Select</label>
             <div class="col-8">
-                <textarea id="textarea" name="textarea" cols="40" rows="5" class="form-control"></textarea>
+                <select id="select" name="select" class="custom-select" required="required">
+                    {{#each subCategories}}
+                        <option value={{@key}}>{{this.title}}</option>
+
+                    {{/each}}
+
+                </select>
             </div>
         </div>
         <div class="form-group row">
